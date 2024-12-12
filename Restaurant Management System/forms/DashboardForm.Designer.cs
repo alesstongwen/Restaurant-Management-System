@@ -1,16 +1,16 @@
-﻿namespace Restaurant_Management_System.forms
+﻿namespace Restaurant_Management_System
 {
     partial class DashboardForm
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
+        private System.Windows.Forms.Button btnMenuManagement;
+        private System.Windows.Forms.Button btnOrderManagement;
+        private System.Windows.Forms.Button btnTableManagement;
+        private System.Windows.Forms.Label lblWelcome;
 
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -28,57 +28,67 @@
         /// </summary>
         private void InitializeComponent()
         {
-            TodayRevenue = new GroupBox();
-            Dashboard = new Label();
-            PendingOrders = new GroupBox();
-            SuspendLayout();
+            this.btnMenuManagement = new System.Windows.Forms.Button();
+            this.btnOrderManagement = new System.Windows.Forms.Button();
+            this.btnTableManagement = new System.Windows.Forms.Button();
+            this.lblWelcome = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+
             // 
-            // TodayRevenue
+            // btnMenuManagement
             // 
-            TodayRevenue.Location = new Point(126, 175);
-            TodayRevenue.Name = "TodayRevenue";
-            TodayRevenue.Size = new Size(400, 200);
-            TodayRevenue.TabIndex = 0;
-            TodayRevenue.TabStop = false;
-            TodayRevenue.Text = "Today's Revenue";
+            this.btnMenuManagement.Location = new System.Drawing.Point(100, 150);
+            this.btnMenuManagement.Name = "btnMenuManagement";
+            this.btnMenuManagement.Size = new System.Drawing.Size(150, 50);
+            this.btnMenuManagement.Text = "Menu Management";
+            this.btnMenuManagement.UseVisualStyleBackColor = true;
+            this.btnMenuManagement.Click += new System.EventHandler(this.btnMenuManagement_Click);
+
             // 
-            // Dashboard
+            // btnOrderManagement
             // 
-            Dashboard.AutoSize = true;
-            Dashboard.Location = new Point(137, 67);
-            Dashboard.Name = "Dashboard";
-            Dashboard.Size = new Size(129, 32);
-            Dashboard.TabIndex = 1;
-            Dashboard.Text = "Dashboard";
+            this.btnOrderManagement.Location = new System.Drawing.Point(300, 150);
+            this.btnOrderManagement.Name = "btnOrderManagement";
+            this.btnOrderManagement.Size = new System.Drawing.Size(150, 50);
+            this.btnOrderManagement.Text = "Order Management";
+            this.btnOrderManagement.UseVisualStyleBackColor = true;
+            this.btnOrderManagement.Click += new System.EventHandler(this.btnOrderManagement_Click);
+
             // 
-            // PendingOrders
+            // btnTableManagement
             // 
-            PendingOrders.Location = new Point(614, 175);
-            PendingOrders.Name = "PendingOrders";
-            PendingOrders.Size = new Size(400, 200);
-            PendingOrders.TabIndex = 2;
-            PendingOrders.TabStop = false;
-            PendingOrders.Text = "Pending Orders";
-            PendingOrders.UseWaitCursor = true;
+            this.btnTableManagement.Location = new System.Drawing.Point(500, 150);
+            this.btnTableManagement.Name = "btnTableManagement";
+            this.btnTableManagement.Size = new System.Drawing.Size(150, 50);
+            this.btnTableManagement.Text = "Table Management";
+            this.btnTableManagement.UseVisualStyleBackColor = true;
+            this.btnTableManagement.Click += new System.EventHandler(this.btnTableManagement_Click);
+
+            // 
+            // lblWelcome
+            // 
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.Location = new System.Drawing.Point(50, 50);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(200, 32);
+            this.lblWelcome.Text = "Welcome, User";
+
             // 
             // DashboardForm
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1452, 897);
-            Controls.Add(PendingOrders);
-            Controls.Add(Dashboard);
-            Controls.Add(TodayRevenue);
-            Name = "DashboardForm";
-            Text = "DashboardForm";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnMenuManagement);
+            this.Controls.Add(this.btnOrderManagement);
+            this.Controls.Add(this.btnTableManagement);
+            this.Controls.Add(this.lblWelcome);
+            this.Name = "DashboardForm";
+            this.Text = "DashboardForm";
+            this.ResumeLayout(false);
+            this.PerformLayout();
         }
 
         #endregion
-
-        private GroupBox TodayRevenue;
-        private Label Dashboard;
-        private GroupBox PendingOrders;
     }
 }

@@ -1,92 +1,133 @@
-﻿namespace Restaurant_Management_System.forms
+﻿namespace Restaurant_Management_System
 {
     partial class MenuForm
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
+        private TextBox dishNameTextBox;
+        private ComboBox categoryComboBox;
+        private NumericUpDown priceNumericUpDown;
+        private CheckBox availabilityCheckBox;
+        private Button addButton;
+        private DataGridView menuDataGridView;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            DishNameTextbox = new TextBox();
-            DishName = new Label();
-            comboBox1 = new ComboBox();
-            Category = new Label();
+            dishNameTextBox = new TextBox();
+            categoryComboBox = new ComboBox();
+            priceNumericUpDown = new NumericUpDown();
+            availabilityCheckBox = new CheckBox();
+            addButton = new Button();
+            menuDataGridView = new DataGridView();
+            dishName = new Label();
+            category = new Label();
+            Price = new Label();
+            ((System.ComponentModel.ISupportInitialize)priceNumericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)menuDataGridView).BeginInit();
             SuspendLayout();
             // 
-            // DishNameTextbox
+            // dishNameTextBox
             // 
-            DishNameTextbox.Location = new Point(260, 53);
-            DishNameTextbox.Name = "DishNameTextbox";
-            DishNameTextbox.Size = new Size(200, 39);
-            DishNameTextbox.TabIndex = 0;
+            dishNameTextBox.Location = new Point(187, 35);
+            dishNameTextBox.Name = "dishNameTextBox";
+            dishNameTextBox.PlaceholderText = "Dish Name";
+            dishNameTextBox.Size = new Size(200, 39);
+            dishNameTextBox.TabIndex = 0;
+            dishNameTextBox.TextChanged += dishNameTextBox_TextChanged;
             // 
-            // DishName
+            // categoryComboBox
             // 
-            DishName.AutoSize = true;
-            DishName.Location = new Point(91, 58);
-            DishName.Name = "DishName";
-            DishName.Size = new Size(132, 32);
-            DishName.TabIndex = 1;
-            DishName.Text = "Dish Name";
+            categoryComboBox.Location = new Point(187, 84);
+            categoryComboBox.Name = "categoryComboBox";
+            categoryComboBox.Size = new Size(200, 40);
+            categoryComboBox.TabIndex = 1;
             // 
-            // comboBox1
+            // priceNumericUpDown
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(260, 144);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(242, 40);
-            comboBox1.TabIndex = 2;
+            priceNumericUpDown.DecimalPlaces = 2;
+            priceNumericUpDown.Location = new Point(187, 147);
+            priceNumericUpDown.Name = "priceNumericUpDown";
+            priceNumericUpDown.Size = new Size(200, 39);
+            priceNumericUpDown.TabIndex = 2;
             // 
-            // Category
+            // availabilityCheckBox
             // 
-            Category.AutoSize = true;
-            Category.Location = new Point(115, 149);
-            Category.Name = "Category";
-            Category.Size = new Size(78, 32);
-            Category.TabIndex = 3;
-            Category.Text = "label1";
+            availabilityCheckBox.Location = new Point(170, 214);
+            availabilityCheckBox.Name = "availabilityCheckBox";
+            availabilityCheckBox.Size = new Size(200, 30);
+            availabilityCheckBox.TabIndex = 3;
+            availabilityCheckBox.Text = "Available";
+            // 
+            // addButton
+            // 
+            addButton.Location = new Point(219, 289);
+            addButton.Name = "addButton";
+            addButton.Size = new Size(100, 43);
+            addButton.TabIndex = 4;
+            addButton.Text = "Add Item";
+            addButton.Click += addButton_Click;
+            // 
+            // menuDataGridView
+            // 
+            menuDataGridView.AllowUserToAddRows = false;
+            menuDataGridView.AllowUserToDeleteRows = false;
+            menuDataGridView.ColumnHeadersHeight = 46;
+            menuDataGridView.Location = new Point(496, 62);
+            menuDataGridView.Name = "menuDataGridView";
+            menuDataGridView.ReadOnly = true;
+            menuDataGridView.RowHeadersWidth = 82;
+            menuDataGridView.Size = new Size(500, 300);
+            menuDataGridView.TabIndex = 5;
+            // 
+            // dishName
+            // 
+            dishName.AutoSize = true;
+            dishName.Location = new Point(27, 35);
+            dishName.Name = "dishName";
+            dishName.Size = new Size(132, 32);
+            dishName.TabIndex = 6;
+            dishName.Text = "Dish Name";
+            // 
+            // category
+            // 
+            category.AutoSize = true;
+            category.Location = new Point(49, 92);
+            category.Name = "category";
+            category.Size = new Size(110, 32);
+            category.TabIndex = 7;
+            category.Text = "Category";
+            // 
+            // Price
+            // 
+            Price.AutoSize = true;
+            Price.Location = new Point(78, 157);
+            Price.Name = "Price";
+            Price.Size = new Size(65, 32);
+            Price.TabIndex = 8;
+            Price.Text = "Price";
             // 
             // MenuForm
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(Category);
-            Controls.Add(comboBox1);
-            Controls.Add(DishName);
-            Controls.Add(DishNameTextbox);
+            ClientSize = new Size(1145, 610);
+            Controls.Add(Price);
+            Controls.Add(category);
+            Controls.Add(dishName);
+            Controls.Add(dishNameTextBox);
+            Controls.Add(categoryComboBox);
+            Controls.Add(priceNumericUpDown);
+            Controls.Add(availabilityCheckBox);
+            Controls.Add(addButton);
+            Controls.Add(menuDataGridView);
             Name = "MenuForm";
-            Text = "MenuForm";
+            Text = "Menu Management";
+            Load += MenuForm_Load;
+            ((System.ComponentModel.ISupportInitialize)priceNumericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)menuDataGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
-        #endregion
-
-        private TextBox DishNameTextbox;
-        private Label DishName;
-        private ComboBox comboBox1;
-        private Label Category;
+        private Label dishName;
+        private Label category;
+        private Label Price;
     }
 }
